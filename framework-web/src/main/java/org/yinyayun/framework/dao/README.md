@@ -1,0 +1,1 @@
+从${basedir}/generate目录中拷贝dao到当前目录。

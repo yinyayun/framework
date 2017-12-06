@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+  
+<!-- 更多配置，参考：http://www.mybatis.org/generator/configreference/xmlconfig.html -->
+<generatorConfiguration>
+  <!-- 多个数据源可以配置多个context -->
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="COM.ibm.db2.jdbc.app.DB2Driver"
+        connectionURL="jdbc:db2:TEST"
+        userId="db2admin"
+        password="db2admin">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="org.yinyayun.framework.model" targetProject="generate">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="org.yinyayun.framework.dao.xml"  targetProject="generate">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="org.yinyayun.framework.dao"  targetProject="generate">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+
+  </context>
+</generatorConfiguration>

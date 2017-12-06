@@ -1,0 +1,1 @@
+从`${basedir}/generate`目录中拷贝model到当前目录。
